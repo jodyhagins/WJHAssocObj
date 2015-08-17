@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Jody Hagins. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for WJHAssocObj.
 FOUNDATION_EXPORT double WJHAssocObjVersionNumber;
@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double WJHAssocObjVersionNumber;
 //! Project version string for WJHAssocObj.
 FOUNDATION_EXPORT const unsigned char WJHAssocObjVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <WJHAssocObj/PublicHeader.h>
-
-
+#import "WJHAssocObj/WJHAssociatedObjects.h"
