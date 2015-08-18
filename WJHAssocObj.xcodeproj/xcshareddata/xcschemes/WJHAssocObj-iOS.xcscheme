@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C85931961B823263007C7C6F"
-               BuildableName = "WJHAssocObj-iOS.framework"
+               BuildableName = "WJHAssocObj.framework"
                BlueprintName = "WJHAssocObj-iOS"
                ReferencedContainer = "container:WJHAssocObj.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C85931A11B823263007C7C6F"
-               BuildableName = "WJHAssocObjTests-iOS.xctest"
+               BuildableName = "WJHAssocObjTests.xctest"
                BlueprintName = "WJHAssocObjTests-iOS"
                ReferencedContainer = "container:WJHAssocObj.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C85931A11B823263007C7C6F"
-               BuildableName = "WJHAssocObjTests-iOS.xctest"
+               BuildableName = "WJHAssocObjTests.xctest"
                BlueprintName = "WJHAssocObjTests-iOS"
                ReferencedContainer = "container:WJHAssocObj.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C85931961B823263007C7C6F"
-            BuildableName = "WJHAssocObj-iOS.framework"
+            BuildableName = "WJHAssocObj.framework"
             BlueprintName = "WJHAssocObj-iOS"
             ReferencedContainer = "container:WJHAssocObj.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C85931961B823263007C7C6F"
-            BuildableName = "WJHAssocObj-iOS.framework"
+            BuildableName = "WJHAssocObj.framework"
             BlueprintName = "WJHAssocObj-iOS"
             ReferencedContainer = "container:WJHAssocObj.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C85931961B823263007C7C6F"
-            BuildableName = "WJHAssocObj-iOS.framework"
+            BuildableName = "WJHAssocObj.framework"
             BlueprintName = "WJHAssocObj-iOS"
             ReferencedContainer = "container:WJHAssocObj.xcodeproj">
          </BuildableReference>

@@ -635,6 +635,7 @@
 				C86429321B825DE1008945DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C86429361B825DE1008945DF /* Build configuration list for PBXNativeTarget "WJHAssocObjTests-OSX" */ = {
 			isa = XCConfigurationList;
@@ -643,6 +644,7 @@
 				C86429341B825DE1008945DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
