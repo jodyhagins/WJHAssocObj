@@ -51,6 +51,7 @@ And the implementation could possibly look like this.
 
     @implementation NSObject(Foo)
 
+    #define kStrongKey (@selector(strongObject))
     WJHAssociatedKey(kStrongKey);
     - (id)strongObject {
         return WJHGetAssociatedObject(self, kStrongKey);
@@ -58,32 +59,32 @@ And the implementation could possibly look like this.
     - (void)setStrongObject:(id)strongObject {
         WJHAssociateStrongly(self, kStrongKey, strongObject, YES);
     }
- 
-    WJHAssociatedKey(kWeakKey);
+
+    #define kWeakKey (@selector(weakObject))
     - (id)weakObject {
         return WJHGetAssociatedObject(self, kWeakKey);
     }
     - (void)setWeakObject:(id)weakObject {
         WJHAssociateWeakly(self, kWeakKey, weakObject);
     }
- 
-    WJHAssociatedKey(kCopyKey);
+
+    #define kCopyKey (@selector(copiedObject))
     - (id)copiedObject {
         return WJHGetAssociatedObject(self, kCopyKey);
     }
     - (void)setCopiedObject:(id)objectToCopy {
         WJHAssociateCopy(self, kCopyKey, objectToCopy, NO);
     }
- 
-    WJHAssociatedKey(kPointerKey);
+
+    #define kPointerKey (@selector(rawPointer))
     - (void*)rawPointer {
         return WJHGetAssociatedPointer(self, kPointerKey);
     }
     - (void)setRawPointer:(void *)rawPointer {
         WJHAssociatePointer(self, kPointerKey, rawPointer);
     }
- 
-    WJHAssociatedKey(kIntegerKey);
+
+    #define kIntegerKey (@selector(unsignedInteger))
     - (unsigned)unsignedInteger {
         return (unsigned)WJHGetAssociatedInteger(self, kIntegerKey);
     }
