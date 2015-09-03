@@ -12,6 +12,6 @@
     @public
     __weak id object_;
 }
-
+@property (weak) NSString *s;
 + (id)wrappedWeakRefTo:(id)object;
 @end

@@ -59,7 +59,7 @@
     NSMutableString *STRING;
 }
 
-WJHAssociatedKey(KEY);
+static char const KEY[1];
 
 - (void)setUp {
     [super setUp];

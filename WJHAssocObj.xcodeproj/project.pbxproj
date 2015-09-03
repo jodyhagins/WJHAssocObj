@@ -21,6 +21,8 @@
 		C864293A1B826027008945DF /* WJHAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C85931B41B82332A007C7C6F /* WJHAssociatedObjects.m */; };
 		C864293B1B82602D008945DF /* _WJHAssociatedObjects_WrappedWeakRef.h in Headers */ = {isa = PBXBuildFile; fileRef = C85931B71B823E6D007C7C6F /* _WJHAssociatedObjects_WrappedWeakRef.h */; };
 		C864293C1B826031008945DF /* _WJHAssociatedObjects_WrappedWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = C85931B81B823E6D007C7C6F /* _WJHAssociatedObjects_WrappedWeakRef.m */; };
+		C86429761B897B87008945DF /* WJHAssociatedObjects_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C86429751B897B87008945DF /* WJHAssociatedObjects_impl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C86429771B897B87008945DF /* WJHAssociatedObjects_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = C86429751B897B87008945DF /* WJHAssociatedObjects_impl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		C85931B81B823E6D007C7C6F /* _WJHAssociatedObjects_WrappedWeakRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WJHAssociatedObjects_WrappedWeakRef.m; sourceTree = "<group>"; };
 		C864291E1B825DE1008945DF /* WJHAssocObj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WJHAssocObj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86429281B825DE1008945DF /* WJHAssocObjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WJHAssocObjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86429751B897B87008945DF /* WJHAssociatedObjects_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJHAssociatedObjects_impl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 			children = (
 				C859319C1B823263007C7C6F /* WJHAssocObj.h */,
 				C85931B31B82332A007C7C6F /* WJHAssociatedObjects.h */,
+				C86429751B897B87008945DF /* WJHAssociatedObjects_impl.h */,
 				C85931B41B82332A007C7C6F /* WJHAssociatedObjects.m */,
 				C859319A1B823263007C7C6F /* Supporting Files */,
 				C85931B71B823E6D007C7C6F /* _WJHAssociatedObjects_WrappedWeakRef.h */,
@@ -155,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C859319D1B823263007C7C6F /* WJHAssocObj.h in Headers */,
+				C86429761B897B87008945DF /* WJHAssociatedObjects_impl.h in Headers */,
 				C85931B51B82332A007C7C6F /* WJHAssociatedObjects.h in Headers */,
 				C85931B91B823E6D007C7C6F /* _WJHAssociatedObjects_WrappedWeakRef.h in Headers */,
 			);
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86429381B826011008945DF /* WJHAssocObj.h in Headers */,
+				C86429771B897B87008945DF /* WJHAssociatedObjects_impl.h in Headers */,
 				C86429391B826020008945DF /* WJHAssociatedObjects.h in Headers */,
 				C864293B1B82602D008945DF /* _WJHAssociatedObjects_WrappedWeakRef.h in Headers */,
 			);

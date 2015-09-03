@@ -15,35 +15,29 @@
  
  When using these functions, keep in mind these points (which, by the way, are the same as when using objc_setAssociatedObject).
  
- - The key is a void pointer, and should be unique.  Do not use raw C-strings, as they are not guaranteed to be coallesced into a unique string.  I recommend using the address of a static object, as it is guaranteed to be unique through the lifetime of the program.  Specifically, I recommend using the following pattern.
+ - The key is a void pointer, and should be unique.  Do not use raw C-strings, as they are not guaranteed to be coallesced into a unique string.  I recommend using the address of a static object.
 
- @code
-    static char const KEY[1];
- @endcode
-
- The macro WJHAssociatedKey() reduces the chance for a typo.
- 
  - The first parameter is the object that "holds" the association.
- 
-    static char const kMyKey[1];
- 
+
  - You can only have oe associated object per unique key.  If you create an association with the same key as an existing association, the previous association will be removed.
  
  - The atomically parameter has the same meaning as atomic on property declarations.
  
  As an example, the following code adds several properties to an arbitrary category on NSObject.  First, the interface declaration.
  
-    @interface NSObject (Foo)
-    @property (atomic, strong) id strongObject;
-    @property (weak) id weakObject;
-    @property (nonatomic, copy) id copiedObject;
-    @property void* rawPointer;
-    @property unsigned unsignedInteger;
-    @end
+    \@interface NSObject (Foo)
+    \@property (atomic, strong) id strongObject;
+    \@property (weak) id weakObject;
+    \@property (nonatomic, copy) id copiedObject;
+    \@property void* rawPointer;
+    \@property unsigned unsignedInteger;
+    \@end
  
- And now, the implementation.
+ And now, the implementation of the properties.
  
-    @implementation NSObject(Foo)
+    \@implementation NSObject(Foo)
+
+    #define kStrongKey (@selector(strongObject))
     WJHAssociatedKey(kStrongKey);
     - (id)strongObject {
         return WJHGetAssociatedObject(self, kStrongKey);
@@ -52,7 +46,7 @@
         WJHAssociateStrongly(self, kStrongKey, strongObject, YES);
     }
  
-    WJHAssociatedKey(kWeakKey);
+    #define kWeakKey (@selector(weakObject))
     - (id)weakObject {
         return WJHGetAssociatedObject(self, kWeakKey);
     }
@@ -60,7 +54,7 @@
         WJHAssociateWeakly(self, kWeakKey, weakObject);
     }
  
-    WJHAssociatedKey(kCopyKey);
+    #define kCopyKey (@selector(copiedObject))
     - (id)copiedObject {
         return WJHGetAssociatedObject(self, kCopyKey);
     }
@@ -68,7 +62,7 @@
         WJHAssociateCopy(self, kCopyKey, objectToCopy, NO);
     }
  
-    WJHAssociatedKey(kPointerKey);
+    #define kPointerKey (@selector(rawPointer))
     - (void*)rawPointer {
         return WJHGetAssociatedPointer(self, kPointerKey);
     }
@@ -76,14 +70,15 @@
         WJHAssociatePointer(self, kPointerKey, rawPointer);
     }
  
-    WJHAssociatedKey(kIntegerKey);
+    #define kIntegerKey (@selector(unsignedInteger))
     - (unsigned)unsignedInteger {
         return (unsigned)WJHGetAssociatedInteger(self, kIntegerKey);
     }
     - (void)setUnsignedInteger:(unsigned int)unsignedInteger {
         WJHAssociateInteger(self, kIntegerKey, (intptr_t)unsignedInteger);
     }
-    @end
+
+    \@end
  
  @warning Be careful to use the proper methods for objects, and non-objects.
  
@@ -93,10 +88,6 @@
  */
 
 @import Foundation;
-
-/** Macro to easily define a key that will be unique for the lifetime of the program.
- */
-#define WJHAssociatedKey(_name_) static char const _name_[1] = {}
 
 /** The value is stored as a strong-pointer association to object, referenced by key.
     @param object The object that holds the associated value
@@ -164,3 +155,6 @@ intptr_t WJHGetAssociatedInteger(id object, void const *key);
     @param key The unique key that identifies the associated object
  */
 void WJHDisassociate(id object, void const *key);
+
+
+#import "WJHAssociatedObjects_impl.h"

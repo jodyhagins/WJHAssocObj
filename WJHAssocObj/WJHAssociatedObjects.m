@@ -12,7 +12,6 @@
 
 #define Wrapper _WJHAssociatedObjects_WrappedWeakRef
 
-#pragma mark - Static Initialization
 static Class proxyWrapperClass;
 
 __attribute__((constructor))
@@ -24,36 +23,16 @@ static void MyModuleInitializer()
     });
 }
 
-
-#pragma mark - Create Associations
-
-void WJHAssociateStrongly(id object, void const *key, id value, BOOL atomically)
+BOOL _wjhIsProxyClass(id object)
 {
-    objc_setAssociatedObject(object, key, value, atomically ? OBJC_ASSOCIATION_RETAIN : OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-void WJHAssociateCopy(id object, void const *key, id value, BOOL atomically)
-{
-    objc_setAssociatedObject(object, key, value, atomically ? OBJC_ASSOCIATION_COPY : OBJC_ASSOCIATION_COPY_NONATOMIC);
+    return object_getClass(object) == proxyWrapperClass;
 }
 
 void WJHAssociateWeakly(id object, void const *key, id value)
 {
-    WJHAssociateStrongly(object, key, [Wrapper wrappedWeakRefTo:value], YES);
+    assert(!_wjhIsProxyClass(value));
+    objc_setAssociatedObject(object, key, [Wrapper wrappedWeakRefTo:value], OBJC_ASSOCIATION_RETAIN);
 }
-
-void WJHAssociatePointer(id object, void const *key, void const *value)
-{
-    objc_setAssociatedObject(object, key, (__bridge id)(value), OBJC_ASSOCIATION_ASSIGN);
-}
-
-void WJHAssociateInteger(id object, void const *key, intptr_t value)
-{
-    objc_setAssociatedObject(object, key, (__bridge id)((void*)value), OBJC_ASSOCIATION_ASSIGN);
-}
-
-
-#pragma mark - Fetch Associations
 
 id WJHGetAssociatedObject(id object, void const *key)
 {
@@ -65,22 +44,4 @@ id WJHGetAssociatedObject(id object, void const *key)
         }
     }
     return value;
-}
-
-void * WJHGetAssociatedPointer(id object, void const *key)
-{
-    return (__bridge void*)objc_getAssociatedObject(object, key);
-}
-
-intptr_t WJHGetAssociatedInteger(id object, void const *key)
-{
-    return (intptr_t)(__bridge void*)objc_getAssociatedObject(object, key);
-}
-
-
-#pragma mark - Break Associations
-
-void WJHDisassociate(id object, void const *key)
-{
-    objc_setAssociatedObject(object, key, nil, OBJC_ASSOCIATION_ASSIGN);
 }
