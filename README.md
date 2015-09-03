@@ -1,7 +1,7 @@
 
 # WJHAssocObj.framework
 
-[![Github release](https://img.shields.io/github/release/jodyhagins/WJHAssocObj.svg)](https://github.com/jodyhagins/WJHAssocObj/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/jodyhagins/WJHAssocObj/master/LICENSE.md)
+[![GitHub version](https://badge.fury.io/gh/jodyhagins%2FWJHAssocObj.svg)](https://github.com/jodyhagins/WJHAssocObj/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/jodyhagins/WJHAssocObj/master/LICENSE.md)
 
 This is a very simple framework composed of C functions that extend the behavior of `objc_setAssociatedObject` and its counterparts.
 
