@@ -38,7 +38,7 @@ id WJHGetAssociatedObject(id object, void const *key)
 {
     id value = objc_getAssociatedObject(object, key);
     if (object_getClass(value) == proxyWrapperClass) {
-        value = ((Wrapper*)value)->object_;
+        value = ((Wrapper*)value).object;
         if (!value) {
             WJHDisassociate(object, key);
         }
