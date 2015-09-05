@@ -15,3 +15,4 @@ FOUNDATION_EXPORT double WJHAssocObjVersionNumber;
 FOUNDATION_EXPORT const unsigned char WJHAssocObjVersionString[];
 
 #import "WJHAssocObj/WJHAssociatedObjects.h"
+#import "WJHAssocObj/NSObject+WJHAssocObj.h"
