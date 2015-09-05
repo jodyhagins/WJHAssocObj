@@ -16,7 +16,7 @@
 }
 
 - (void)wjh_associateWeakly:(id)object withKey:(const void *)key atomically:(BOOL)atomically {
-    WJHAssociateWeakly(self, key, object);
+    WJHAssociateWeakly(self, key, object, atomically);
 }
 
 - (void)wjh_associateCopy:(id)object withKey:(const void *)key atomically:(BOOL)atomically {
@@ -53,7 +53,7 @@
 }
 
 + (void)wjh_associateWeakly:(id)object withKey:(const void *)key atomically:(BOOL)atomically {
-    WJHAssociateWeakly(self, key, object);
+    WJHAssociateWeakly(self, key, object, atomically);
 }
 
 + (void)wjh_associateCopy:(id)object withKey:(const void *)key atomically:(BOOL)atomically {

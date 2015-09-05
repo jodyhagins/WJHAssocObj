@@ -204,7 +204,7 @@ static char const KEY[1];
 #pragma mark - Weak Association
 
 - (void)testBasicWeakAssociation {
-    WJHAssociateWeakly(OBJECT, KEY, STRING);
+    WJHAssociateWeakly(OBJECT, KEY, STRING, YES);
     id fetched = WJHGetAssociatedObject(OBJECT, KEY);
     XCTAssertEqualObjects(fetched, STRING, @"fetch what we set");
     XCTAssertTrue(STRING == fetched, @"Should be identical");
@@ -212,7 +212,7 @@ static char const KEY[1];
 }
 
 - (void)testBreakWeakAssociation {
-    WJHAssociateWeakly(OBJECT, KEY, STRING);
+    WJHAssociateWeakly(OBJECT, KEY, STRING, YES);
     XCTAssertTrue(STRING == WJHGetAssociatedObject(OBJECT, KEY), @"Set");
     WJHDisassociate(OBJECT, KEY);
     XCTAssertNil(WJHGetAssociatedObject(OBJECT, KEY), @"Should be clear");
@@ -226,7 +226,7 @@ static char const KEY[1];
         @autoreleasepool {
             NSMutableString *value = [STRING mutableCopy];
             weakValue = value;
-            WJHAssociateWeakly(OBJECT, KEY, value);
+            WJHAssociateWeakly(OBJECT, KEY, value, YES);
             XCTAssertTrue(value == WJHGetAssociatedObject(OBJECT, KEY), @"Set");
             strongValue = WJHGetAssociatedObject(OBJECT, KEY);
         }

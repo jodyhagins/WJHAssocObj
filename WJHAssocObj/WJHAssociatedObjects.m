@@ -28,10 +28,10 @@ BOOL _wjhIsProxyClass(id object)
     return object_getClass(object) == proxyWrapperClass;
 }
 
-void WJHAssociateWeakly(id object, void const *key, id value)
+void WJHAssociateWeakly(id object, void const *key, id value, BOOL atomically)
 {
     assert(!_wjhIsProxyClass(value));
-    objc_setAssociatedObject(object, key, [Wrapper wrappedWeakRefTo:value], OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(object, key, [Wrapper wrappedWeakRefTo:value], atomically ? OBJC_ASSOCIATION_RETAIN : OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 id WJHGetAssociatedObject(id object, void const *key)

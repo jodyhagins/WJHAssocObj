@@ -123,7 +123,7 @@ static inline void WJHAssociateCopy(id object, void const *key, id value, BOOL a
  @param key The unique key used to identify the associated object
  @param value The object being added to the association.  It will be stored as a weak-pointer to the value object.  Thus, it will behave in the same way as any other weak pointer.  When the original object is finally deallocated, the pointer in the association will be zeroed, in effect, removing it from the association.
  */
-void WJHAssociateWeakly(id object, void const *key, id value);
+void WJHAssociateWeakly(id object, void const *key, id value, BOOL atomically);
 
 /**
  The value is stored as a raw pointer association to object, referenced by key.
