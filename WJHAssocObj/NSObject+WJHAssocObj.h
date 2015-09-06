@@ -10,6 +10,11 @@
 
 @interface NSObject (WJHAssocObj)
 
+#pragma mark Creating Associations
+///----------------------------
+/// @name Creating Associations
+///----------------------------
+
 /**
  Associate the object with the receiver using a strong reference.
 
@@ -22,7 +27,7 @@
 /**
  Associate a copy of the object with the receiver.
 
- @param value The object being added to the association.  It will be a "copy" in the same way that declaring a property with the copy attribute ensures a copy of the object.
+ @param object The object being added to the association.  It will be a "copy" in the same way that declaring a property with the copy attribute ensures a copy of the object.
  @param key The unique key used to identify the associated object
  @param atomically Should the association be made atomically
  */
@@ -53,43 +58,6 @@
  */
 - (void)wjh_associateInteger:(intptr_t)integer withKey:(void const *)key;
 
-/**
- Fetch the object that is associated with the given key.
-
- @param key The unique key that identifies the associated object
-
- @return The associated object, or nil if there is no association
-
- @note Note that getting an associated weak pointer will return a strong pointer.  The associated object is still weak, but the one returned will be strong, and as such will retain the underlying object.
- */
-- (id)wjh_associatedObjectWithKey:(void const *)key;
-
-/**
- Fetch the raw pointer that is associated with the given key.
-
- @param key The unique key that identifies the associated pointer
-
- @return The associated pointer, or NULL if there is no association
- */
-- (void*)wjh_associatedPointerWithKey:(void const *)key;
-
-/**
- Fetch the integer that is associated with the given key.
-
- @param key The unique key that identifies the associated integer
-
- @return The associated integer, or 0 if there is no association
- */
-- (intptr_t)wjh_associatedIntegerWithKey:(void const *)key;
-
-/**
- Remove the association for the specified key
-
- @param key The unique key that identifies the associated object
- */
-- (void)wjh_disassociateKey:(void const *)key;
-
-
 
 /**
  Associate the object with the receiving class using a strong reference.
@@ -103,7 +71,7 @@
 /**
  Associate a copy of the object with the receiving class.
 
- @param value The object being added to the association.  It will be a "copy" in the same way that declaring a property with the copy attribute ensures a copy of the object.
+ @param object The object being added to the association.  It will be a "copy" in the same way that declaring a property with the copy attribute ensures a copy of the object.
  @param key The unique key used to identify the associated object
  @param atomically Should the association be made atomically
  */
@@ -134,6 +102,42 @@
  */
 + (void)wjh_associateInteger:(intptr_t)integer withKey:(void const *)key;
 
+
+#pragma Fetching Associations
+///----------------------------
+/// @name Fetching Associations
+///----------------------------
+
+/**
+ Fetch the object that is associated with the given key.
+
+ @param key The unique key that identifies the associated object
+
+ @return The associated object, or nil if there is no association
+
+ @note Note that getting an associated weak pointer will return a strong pointer.  The associated object is still weak, but the one returned will be strong, and as such will retain the underlying object.
+ */
+- (id)wjh_associatedObjectWithKey:(void const *)key;
+
+/**
+ Fetch the raw pointer that is associated with the given key.
+
+ @param key The unique key that identifies the associated pointer
+
+ @return The associated pointer, or NULL if there is no association
+ */
+- (void*)wjh_associatedPointerWithKey:(void const *)key;
+
+/**
+ Fetch the integer that is associated with the given key.
+
+ @param key The unique key that identifies the associated integer
+
+ @return The associated integer, or 0 if there is no association
+ */
+- (intptr_t)wjh_associatedIntegerWithKey:(void const *)key;
+
+
 /**
  Fetch the object that is associated with the given key.
 
@@ -162,6 +166,20 @@
  @return The associated integer, or 0 if there is no association
  */
 + (intptr_t)wjh_associatedIntegerWithKey:(void const *)key;
+
+
+#pragma mark Breaking Associations
+///----------------------------
+/// @name Breaking Associations
+///----------------------------
+
+/**
+ Remove the association for the specified key
+
+ @param key The unique key that identifies the associated object
+ */
+- (void)wjh_disassociateKey:(void const *)key;
+
 
 /**
  Remove the association for the specified key
