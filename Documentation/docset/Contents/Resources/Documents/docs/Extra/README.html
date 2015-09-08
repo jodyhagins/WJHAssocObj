@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>README Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WJHAssocObj </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Think Solutions, LLC</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">README Document</h1>
+
+					<h1>WJHAssocObj.framework</h1>
+
+<p><a href="https://github.com/jodyhagins/WJHAssocObj/releases"><img src="https://badge.fury.io/gh/jodyhagins%2FWJHAssocObj.svg" alt="GitHub version" /></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a> <a href="https://raw.githubusercontent.com/jodyhagins/WJHAssocObj/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license" /></a></p>
+
+<p>This is a very simple framework composed of C functions that extend the behavior of <code>objc_setAssociatedObject</code> and its counterparts.  Some folks see C APIs as anathema, so I have also included a category on <code>NSObject</code> that provides the same capabilities.</p>
+
+<h2>Documentation</h2>
+
+<p>Documentation is provided in two forms.  HTML documentation can be found in the Documentation/html directory.  An apple docset is also already prepared in Documentation/docset.  HTML documentation is also available <a href="https://github.com/jodyhagins/WJHAssocObj/wiki">on the project wiki</a>.</p>
+
+<p>The provided docset can be manually installed and integrated with Xcode.  Also, the Xcode project includes a Documentation target that will build and install the docset from source.  You must have appledoc to do this, and at least as of now, the standard appledoc may or may not properly generate the files.  You can grab my branch that has a few patches <a href="https://github.com/jodyhagins/appledoc.git">from here</a> or simply use the provided docset.</p>
+
+<h2>Motivation</h2>
+
+<p>The main drawback of the existing API is that it does not provide support for zeroing weak pointers.  In addition, with ARC lots of ugly casts are necessary for even simple use cases.  Thus, this library provides zeroing weak pointer support, and also makes it easier to associate both objects and native integral/pointer types.</p>
+
+<p>See <a href="http://cocoaandgrits.blogspot.com/2015/08/associated-objects.html">this blog post</a> if you are interested in more details.</p>
+
+<h2>Installation</h2>
+
+<p><a href="https://github.com/carthage/carthage">Carthage</a> is the recommended way to install WJHAssocObj.  Add the following to your Cartfile:</p>
+
+<pre>    github "jodyhagins/WJHAssocObj"</pre>
+
+
+<p>For manual installation, I recommend adding the project as a subproject to your project or workspace and adding the framework as a target dependency.</p>
+
+<h2>Usage</h2>
+
+<p>When using these functions, keep in mind these points (which, by the way, are the same as when using <code>objc_setAssociatedObject</code>).</p>
+
+<ul>
+<li><p>The <code>key</code> is a void pointer, and should be unique.  Do not use raw C-strings, as they are not guaranteed to be coalesced into a unique string.  I recommend using the address of a static object, as it is guaranteed to be unique through the lifetime of the program.  You can use the address of a function or a selector as well.</p></li>
+<li><p>The first parameter is the object that &ldquo;holds&rdquo; the association.</p></li>
+<li><p>You can only have one associated object per unique key.  If you create an association with the same key as an existing association, the previous association will be removed.</p></li>
+<li><p>The <code>atomically</code> parameter has the same meaning as atomic on property declarations.</p></li>
+</ul>
+
+
+<h3>Example</h3>
+
+<p>As an example, let’s pretend that we are adding several properties to an arbitrary category on NSObject, a prime use case for associated objects.  The interface declaration may look like this.</p>
+
+<pre><code>@interface NSObject (Foo)
+    @property (atomic, strong) id strongObject;
+    @property (weak) id weakObject;
+    @property (nonatomic, copy) id copiedObject;
+    @property void* rawPointer;
+    @property unsigned unsignedInteger;
+@end
+</code></pre>
+
+<p>And the implementation could possibly look like this.  I am using <a href="http://gentlebytes.com/appledoc/">Appledoc</a> to generate the documentation and it does not support C functions (but the generated documentation looks much better than that generated by either doxygen or headerdoc).  Thus, the example uses the ObjC API.</p>
+
+<pre><code>    @implementation NSObject(Foo)
+
+    #define kStrongKey (@selector(strongObject))
+    WJHAssociatedKey(kStrongKey);
+    - (id)strongObject {
+        return [self wjh_associatedObjectWithKey:kStrongKey];
+    }
+    - (void)setStrongObject:(id)strongObject {
+        [self wjh_associateStrongly:strongObject withKey:kStrongKey atomically:YES];
+    }
+
+    #define kWeakKey (@selector(weakObject))
+    - (id)weakObject {
+        return [self wjh_associatedObjectWithKey:kWeakKey];
+    }
+    - (void)setWeakObject:(id)weakObject {
+        [self wjh_associateWeakly:weakObject withKey:kWeakKey atomically:YES];
+    }
+
+    #define kCopyKey (@selector(copiedObject))
+    - (id)copiedObject {
+        return [self wjh_associatedObjectWithKey:kCopyKey];
+    }
+    - (void)setCopiedObject:(id)objectToCopy {
+        [self wjh_associateCopy:objectToCopy withKey:kCopyKey atomically:NO];
+    }
+
+    #define kPointerKey (@selector(rawPointer))
+    - (void*)rawPointer {
+        return [self wjh_associatedPointerWithKey:kPointerKey];
+    }
+    - (void)setRawPointer:(void *)rawPointer {
+        [self wjh_associatePointer:rawPointer withKey:kPointerKey];
+    }
+
+    #define kIntegerKey (@selector(unsignedInteger))
+    - (unsigned)unsignedInteger {
+        return (unsigned)[self wjh_associatedIntegerWithKey:kIntegerKey];
+    }
+    - (void)setUnsignedInteger:(unsigned int)unsignedInteger {
+        [self wjh_associateInteger:(intptr_t)unsignedInteger withKey:kIntegerKey];
+    }
+
+    @end
+</code></pre>
+
+<h3>Notes</h3>
+
+<p>You use either <code>WJHAssociateStrongly</code>, <code>WJHAssociateCopy</code>, or <code>WJHAssociateWeakly</code> to create associations to objects.  Objects must be fetched with <code>WJHGetAssociatedObject</code>.  Or, using the ObjC API, that would be <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associateStrongly:withKey:atomically:"><code>[NSObject(WJHAssocObj) wjh_associateStrongly:withKey:atomically:]</code></a>, <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associateCopy:withKey:atomically:"><code>[NSObject(WJHAssocObj) wjh_associateCopy:withKey:atomically:]</code></a>, or <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associateWeakly:withKey:atomically:"><code>[NSObject(WJHAssocObj) wjh_associateWeakly:withKey:atomically:]</code></a> to create associations to objects and <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associatedObjectWithKey:"><code>[NSObject(WJHAssocObj) wjh_associatedObjectWithKey:]</code></a> to fetch associated objects.</p>
+
+<p>Similarly, you use <code>WJHAssociatePointer</code> and <code>WJHAssociateInteger</code> for associating non-objects, and they are to be fetched with <code>WJHGetAssociatedPointer</code> and <code>WJHGetAssociatedInteger</code> (though, technically, those two can be interchanged).  Using tha ObjC API, that would be <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associatePointer:withKey:"><code>[NSObject(WJHAssocObj) wjh_associatePointer:withKey:]</code></a> and <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associateInteger:withKey:"><code>[NSObject(WJHAssocObj) wjh_associateInteger:withKey:]</code></a> to the create the associations and <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associatedPointerWithKey:"><code>[NSObject(WJHAssocObj) wjh_associatedPointerWithKey:]</code></a> and <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_associatedIntegerWithKey:"><code>[NSObject(WJHAssocObj) wjh_associatedIntegerWithKey:]</code></a> to fetch the associated values.</p>
+
+<p>An association can be broken with <code>WJHDisassociate</code> or <a href="../../Categories/NSObject+WJHAssocObj.html#//api/name/wjh_disassociateKey:"><code>[NSObject(WJHAssocObj) wjh_disassociateKey:]</code></a>.</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2015 Think Solutions, LLC. All rights reserved. Updated: 2015-09-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

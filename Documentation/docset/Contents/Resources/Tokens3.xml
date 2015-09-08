@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSObject+WJHAssocObj.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSObject(WJHAssocObj)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateStrongly:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate the object with the receiver using a strong reference.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_associateStrongly:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be held strongly (i.e., retained) until the association is removed or until the receiver deallocs.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object.</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateStrongly:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateCopy:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate a copy of the object with the receiver.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_associateCopy:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be a &quot;copy&quot; in the same way that declaring a property with the copy attribute ensures a copy of the object.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateCopy:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateWeakly:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate the object with the receiver using a weak reference.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_associateWeakly:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be stored as a weak reference to the object.  Thus, it will behave in the same way as any other weak reference.  When the original object is finally deallocated, the reference in the association will be zeroed, in effect, removing it from the association.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object.</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateWeakly:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatePointer:withKey:</TokenIdentifier>
+			<Abstract type="html">Associate a raw pointer with the receiver.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_associatePointer:(void const *)pointer withKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pointer</Name>
+					<Abstract type="html">The pointer being added to the association.  It will be stored as a raw pointer, with no reference-counting participation.  Thus, if what it points to is deallocated, the association will still hold the original raw pointer value.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associatePointer:withKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateInteger:withKey:</TokenIdentifier>
+			<Abstract type="html">Associate an integer value with the receiver.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_associateInteger:(intptr_t)integer withKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>integer</Name>
+					<Abstract type="html">The integer being added to the association.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateInteger:withKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateStrongly:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate the object with the receiving class using a strong reference.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_associateStrongly:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be held strongly (i.e., retained) until the association is removed.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object.</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateStrongly:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateCopy:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate a copy of the object with the receiving class.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_associateCopy:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be a &quot;copy&quot; in the same way that declaring a property with the copy attribute ensures a copy of the object.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateCopy:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateWeakly:withKey:atomically:</TokenIdentifier>
+			<Abstract type="html">Associate the object with the receiving class using a weak reference.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_associateWeakly:(id)object withKey:(void const *)key atomically:(BOOL)atomically</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object being added to the association.  It will be stored as a weak reference to the object.  Thus, it will behave in the same way as any other weak reference.  When the original object is finally deallocated, the reference in the association will be zeroed, in effect, removing it from the association.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object.</Abstract>
+				</Parameter><Parameter>
+					<Name>atomically</Name>
+					<Abstract type="html">Should the association be made atomically</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateWeakly:withKey:atomically:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatePointer:withKey:</TokenIdentifier>
+			<Abstract type="html">Associate a raw pointer with the receiving class.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_associatePointer:(void const *)pointer withKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pointer</Name>
+					<Abstract type="html">The pointer being added to the association.  It will be stored as a raw pointer, with no reference-counting participation.  Thus, if what it points to is deallocated, the association will still hold the original raw pointer value.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associatePointer:withKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associateInteger:withKey:</TokenIdentifier>
+			<Abstract type="html">Associate an integer value with the receiving class.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_associateInteger:(intptr_t)integer withKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>integer</Name>
+					<Abstract type="html">The integer being added to the association.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key used to identify the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_associateInteger:withKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedObjectWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the object that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (id)wjh_associatedObjectWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated object, or nil if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedObjectWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedPointerWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the raw pointer that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void *)wjh_associatedPointerWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated pointer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated pointer, or NULL if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedPointerWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedIntegerWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the integer that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (intptr_t)wjh_associatedIntegerWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated integer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated integer, or 0 if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedIntegerWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedObjectWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the object that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (id)wjh_associatedObjectWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated object, or nil if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedObjectWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedPointerWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the raw pointer that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void *)wjh_associatedPointerWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated pointer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated pointer, or NULL if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedPointerWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_associatedIntegerWithKey:</TokenIdentifier>
+			<Abstract type="html">Fetch the integer that is associated with the given key.</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (intptr_t)wjh_associatedIntegerWithKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated integer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The associated integer, or 0 if there is no association</Abstract></ReturnValue>
+			<Anchor>//api/name/wjh_associatedIntegerWithKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_disassociateKey:</TokenIdentifier>
+			<Abstract type="html">Remove the association for the specified key</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>- (void)wjh_disassociateKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_disassociateKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSObject/wjh_disassociateKey:</TokenIdentifier>
+			<Abstract type="html">Remove the association for the specified key</Abstract>
+			<DeclaredIn>NSObject+WJHAssocObj.h</DeclaredIn>
+			
+			<Declaration>+ (void)wjh_disassociateKey:(void const *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The unique key that identifies the associated object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wjh_disassociateKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

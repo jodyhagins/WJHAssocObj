@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSObject(WJHAssocObj) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">WJHAssocObj </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Think Solutions, LLC</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/wjh_associateCopy:withKey:atomically:">+ wjh_associateCopy:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associateInteger:withKey:">+ wjh_associateInteger:withKey:</option>
+		
+		<option value="//api/name/wjh_associatePointer:withKey:">+ wjh_associatePointer:withKey:</option>
+		
+		<option value="//api/name/wjh_associateStrongly:withKey:atomically:">+ wjh_associateStrongly:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associateWeakly:withKey:atomically:">+ wjh_associateWeakly:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associatedIntegerWithKey:">+ wjh_associatedIntegerWithKey:</option>
+		
+		<option value="//api/name/wjh_associatedObjectWithKey:">+ wjh_associatedObjectWithKey:</option>
+		
+		<option value="//api/name/wjh_associatedPointerWithKey:">+ wjh_associatedPointerWithKey:</option>
+		
+		<option value="//api/name/wjh_disassociateKey:">+ wjh_disassociateKey:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/wjh_associateCopy:withKey:atomically:">- wjh_associateCopy:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associateInteger:withKey:">- wjh_associateInteger:withKey:</option>
+		
+		<option value="//api/name/wjh_associatePointer:withKey:">- wjh_associatePointer:withKey:</option>
+		
+		<option value="//api/name/wjh_associateStrongly:withKey:atomically:">- wjh_associateStrongly:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associateWeakly:withKey:atomically:">- wjh_associateWeakly:withKey:atomically:</option>
+		
+		<option value="//api/name/wjh_associatedIntegerWithKey:">- wjh_associatedIntegerWithKey:</option>
+		
+		<option value="//api/name/wjh_associatedObjectWithKey:">- wjh_associatedObjectWithKey:</option>
+		
+		<option value="//api/name/wjh_associatedPointerWithKey:">- wjh_associatedPointerWithKey:</option>
+		
+		<option value="//api/name/wjh_disassociateKey:">- wjh_disassociateKey:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSObject(WJHAssocObj) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSObject+WJHAssocObj.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Creating Associations" name="task_Creating Associations"></a>
+						<h2 class="task-title">Creating Associations</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wjh_associateStrongly:withKey:atomically:" title="wjh_associateStrongly:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateStrongly:withKey:atomically:">&ndash;&nbsp;wjh_associateStrongly:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate the object with the receiver using a strong reference.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_associateStrongly:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be held strongly (i.e., retained) until the association is removed or until the receiver deallocs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateCopy:withKey:atomically:" title="wjh_associateCopy:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateCopy:withKey:atomically:">&ndash;&nbsp;wjh_associateCopy:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate a copy of the object with the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_associateCopy:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be a &ldquo;copy&rdquo; in the same way that declaring a property with the copy attribute ensures a copy of the object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateWeakly:withKey:atomically:" title="wjh_associateWeakly:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateWeakly:withKey:atomically:">&ndash;&nbsp;wjh_associateWeakly:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate the object with the receiver using a weak reference.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_associateWeakly:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be stored as a weak reference to the object.  Thus, it will behave in the same way as any other weak reference.  When the original object is finally deallocated, the reference in the association will be zeroed, in effect, removing it from the association.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatePointer:withKey:" title="wjh_associatePointer:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatePointer:withKey:">&ndash;&nbsp;wjh_associatePointer:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate a raw pointer with the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_associatePointer:(void const *)<em>pointer</em> withKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pointer</code></th>
+						<td><p>The pointer being added to the association.  It will be stored as a raw pointer, with no reference-counting participation.  Thus, if what it points to is deallocated, the association will still hold the original raw pointer value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateInteger:withKey:" title="wjh_associateInteger:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateInteger:withKey:">&ndash;&nbsp;wjh_associateInteger:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate an integer value with the receiver.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_associateInteger:(intptr_t)<em>integer</em> withKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>integer</code></th>
+						<td><p>The integer being added to the association.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateStrongly:withKey:atomically:" title="wjh_associateStrongly:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateStrongly:withKey:atomically:">+&nbsp;wjh_associateStrongly:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate the object with the receiving class using a strong reference.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_associateStrongly:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be held strongly (i.e., retained) until the association is removed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateCopy:withKey:atomically:" title="wjh_associateCopy:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateCopy:withKey:atomically:">+&nbsp;wjh_associateCopy:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate a copy of the object with the receiving class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_associateCopy:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be a &ldquo;copy&rdquo; in the same way that declaring a property with the copy attribute ensures a copy of the object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateWeakly:withKey:atomically:" title="wjh_associateWeakly:withKey:atomically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateWeakly:withKey:atomically:">+&nbsp;wjh_associateWeakly:withKey:atomically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate the object with the receiving class using a weak reference.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_associateWeakly:(id)<em>object</em> withKey:(void const *)<em>key</em> atomically:(BOOL)<em>atomically</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object being added to the association.  It will be stored as a weak reference to the object.  Thus, it will behave in the same way as any other weak reference.  When the original object is finally deallocated, the reference in the association will be zeroed, in effect, removing it from the association.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>atomically</code></th>
+						<td><p>Should the association be made atomically</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatePointer:withKey:" title="wjh_associatePointer:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatePointer:withKey:">+&nbsp;wjh_associatePointer:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate a raw pointer with the receiving class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_associatePointer:(void const *)<em>pointer</em> withKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pointer</code></th>
+						<td><p>The pointer being added to the association.  It will be stored as a raw pointer, with no reference-counting participation.  Thus, if what it points to is deallocated, the association will still hold the original raw pointer value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associateInteger:withKey:" title="wjh_associateInteger:withKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associateInteger:withKey:">+&nbsp;wjh_associateInteger:withKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Associate an integer value with the receiving class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_associateInteger:(intptr_t)<em>integer</em> withKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>integer</code></th>
+						<td><p>The integer being added to the association.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key used to identify the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Fetching Associations" name="task_Fetching Associations"></a>
+						<h2 class="task-title">Fetching Associations</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wjh_associatedObjectWithKey:" title="wjh_associatedObjectWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedObjectWithKey:">&ndash;&nbsp;wjh_associatedObjectWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the object that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)wjh_associatedObjectWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated object, or nil if there is no association</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Note that getting an associated weak pointer will return a strong pointer.  The associated object is still weak, but the one returned will be strong, and as such will retain the underlying object.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatedPointerWithKey:" title="wjh_associatedPointerWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedPointerWithKey:">&ndash;&nbsp;wjh_associatedPointerWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the raw pointer that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void *)wjh_associatedPointerWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated pointer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated pointer, or NULL if there is no association</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatedIntegerWithKey:" title="wjh_associatedIntegerWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedIntegerWithKey:">&ndash;&nbsp;wjh_associatedIntegerWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the integer that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (intptr_t)wjh_associatedIntegerWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated integer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated integer, or 0 if there is no association</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatedObjectWithKey:" title="wjh_associatedObjectWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedObjectWithKey:">+&nbsp;wjh_associatedObjectWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the object that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)wjh_associatedObjectWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated object, or nil if there is no association</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Note that getting an associated weak pointer will return a strong pointer.  The associated object is still weak, but the one returned will be strong, and as such will retain the underlying object.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatedPointerWithKey:" title="wjh_associatedPointerWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedPointerWithKey:">+&nbsp;wjh_associatedPointerWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the raw pointer that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void *)wjh_associatedPointerWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated pointer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated pointer, or NULL if there is no association</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_associatedIntegerWithKey:" title="wjh_associatedIntegerWithKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_associatedIntegerWithKey:">+&nbsp;wjh_associatedIntegerWithKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the integer that is associated with the given key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (intptr_t)wjh_associatedIntegerWithKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated integer</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The associated integer, or 0 if there is no association</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Breaking Associations" name="task_Breaking Associations"></a>
+						<h2 class="task-title">Breaking Associations</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wjh_disassociateKey:" title="wjh_disassociateKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_disassociateKey:">&ndash;&nbsp;wjh_disassociateKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the association for the specified key</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wjh_disassociateKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wjh_disassociateKey:" title="wjh_disassociateKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wjh_disassociateKey:">+&nbsp;wjh_disassociateKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the association for the specified key</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)wjh_disassociateKey:(void const *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The unique key that identifies the associated object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSObject+WJHAssocObj.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Think Solutions, LLC. All rights reserved. Updated: 2015-09-08</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
