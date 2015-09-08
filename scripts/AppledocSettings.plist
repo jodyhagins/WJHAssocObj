@@ -47,7 +47,7 @@
 	<key>--project-name</key>
 	<string>WJHAssocObj</string>
 	<key>--project-version</key>
-	<string>0.1.0</string>
+	<string>0.2.0</string>
 	<key>--repeat-first-par</key>
 	<false/>
 	<key>--warn-empty-description</key>
