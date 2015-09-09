@@ -50,6 +50,11 @@
 	<string>0.2.0</string>
 	<key>--repeat-first-par</key>
 	<false/>
+	<key>--skip-code-block-marker</key>
+	<array>
+		<string>```</string>
+		<string>@code/@endcode</string>
+	</array>
 	<key>--warn-empty-description</key>
 	<true/>
 	<key>--warn-missing-arg</key>
