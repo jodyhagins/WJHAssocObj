@@ -1,4 +1,14 @@
-DYLIB_CURRENT_VERSION = 1.0.1
-DYLIB_COMPATIBILITY_VERSION = 1.0.0
-WJH_RELEASE_VERSION = 1.0.1
-WJH_BUILD_VERSION = 32
+// Tracks the "build" number (i.e., number of git commits -> git rev-list --count HEAD), and will be used for CFBundleVersion
+CURRENT_PROJECT_VERSION = 33
+
+// Version numbers for the frameworks built in this project.
+// These are normally associated with targets, but we want all library targets to track the same version numbers.
+// Minor versions are independent of the major version number, but I want to keep them similar.  Thus, the first number should always match the framework version number.
+// Inheritance trumps assignment, so we have to use separate values, which means manual assignment is cleaner to my eyes
+FRAMEWORK_VERSION = 1
+DYLIB_CURRENT_VERSION = 1.0.2
+DYLIB_COMPATIBILITY_VERSION = 1.0.2
+
+// This project just builds frameworks, so the release version should be the same as the dylib, and should also match the git release tag
+// Used as CFBundleShortVersionString
+WJH_RELEASE_VERSION = 1.0.2
