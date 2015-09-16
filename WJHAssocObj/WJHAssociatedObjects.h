@@ -8,6 +8,15 @@
 
 @import Foundation;
 
+/**
+ The version number of the framework, as found in the Info.plist with key CFBundleVersion
+ */
+double WJHAssociatedObjectsVersionNumber();
+
+/**
+ The version string of the framework, as found in the Info.plist with key CFBundleShortVersionString
+ */
+extern unsigned char const * WJHAssociatedObjectsVersionString();
 
 /**
  The value is stored as a strong-pointer association to object, referenced by key.

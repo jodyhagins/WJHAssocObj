@@ -15,12 +15,9 @@
 static Class proxyWrapperClass;
 
 __attribute__((constructor))
-static void MyModuleInitializer()
+static void init()
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        proxyWrapperClass = [Wrapper class];
-    });
+    proxyWrapperClass = [Wrapper class];
 }
 
 BOOL _wjhIsProxyClass(id object)

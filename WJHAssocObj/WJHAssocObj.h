@@ -8,11 +8,8 @@
 
 @import Foundation;
 
-//! Project version number for WJHAssocObj.
-FOUNDATION_EXPORT double WJHAssocObjVersionNumber;
-
-//! Project version string for WJHAssocObj.
-FOUNDATION_EXPORT const unsigned char WJHAssocObjVersionString[];
+extern double WJHAssocObjVersionNumber();
+extern unsigned char const * WJHAssocObjVersionString();
 
 #import "WJHAssocObj/WJHAssociatedObjects.h"
 #import "WJHAssocObj/NSObject+WJHAssocObj.h"
