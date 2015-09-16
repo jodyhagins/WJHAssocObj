@@ -69,7 +69,6 @@
 		C8005C8B1B9B30F100F91ECC /* _WJHAssociatedObjects_WrappedWeakRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _WJHAssociatedObjects_WrappedWeakRef.h; path = Private/_WJHAssociatedObjects_WrappedWeakRef.h; sourceTree = "<group>"; };
 		C8005C8C1B9B30F100F91ECC /* _WJHAssociatedObjects_WrappedWeakRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _WJHAssociatedObjects_WrappedWeakRef.m; path = Private/_WJHAssociatedObjects_WrappedWeakRef.m; sourceTree = "<group>"; };
 		C8005C9A1B9C2E4900F91ECC /* INDEX.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = INDEX.md; path = scripts/INDEX.md; sourceTree = "<group>"; };
-		C852E0441BA8BF45007D8486 /* version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = version.sh; path = scripts/version.sh; sourceTree = "<group>"; };
 		C852E0451BA8C6E1007D8486 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		C85931971B823263007C7C6F /* WJHAssocObj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WJHAssocObj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C859319B1B823263007C7C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,7 +209,6 @@
 				C8B6C30A1B9938F900D92BE6 /* LICENSE.md */,
 				C8B6C30B1B9938F900D92BE6 /* README.md */,
 				C8B6C3061B98F21400D92BE6 /* gendocs.sh */,
-				C852E0441BA8BF45007D8486 /* version.sh */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
